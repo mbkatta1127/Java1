@@ -73,16 +73,23 @@ public class JavaOne {
         do{
             System.out.println("Enter a string: ");
             string = sc.nextLine();
-            String[] words = string.
+            if(string.equals("quit")) break;
 
             for(int i = 0; i<string.length(); i++){
-                if(string.charAt(i) == ('A' || 'E' || 'I' || 'O' || 'U' || 'a' || 'e' || 'i' || 'o' || 'u')) vowelsCount++;
-                else
 
-
+                if((string.charAt(i) == 'A' || string.charAt(i) == 'E' || string.charAt(i) == 'I' || string.charAt(i) == 'O' ||
+                string.charAt(i) == 'U' || string.charAt(i) == 'a' || string.charAt(i) == 'e' || string.charAt(i) == 'i' ||
+                string.charAt(i) == 'o' || string.charAt(i) == 'u')) vowelsCount++;
+                else if(Character.isLetter(string.charAt(i))) consonantsCount++;
             }
 
+            System.out.println("Number of vowels: " + vowelsCount);
+            System.out.println("Number of consonants: " + consonantsCount);
+            vowelsCount = 0;
+            consonantsCount = 0;
+
         } while(!string.equals("quit"));
+
     }
 
     public void ex6() {
